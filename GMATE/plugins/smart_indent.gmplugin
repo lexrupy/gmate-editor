@@ -1,0 +1,7 @@
+[GMate Plugin]
+Module=smart_indent
+Name=Smart Indent
+Description=A Smart Indentation Plugin for GMate
+Authors=Alexandre da Silva <lexrupy at gmail dot com>
+Website=http://blog.siverti.com.br/gmate
+

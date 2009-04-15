@@ -1,0 +1,7 @@
+[GMate Plugin]
+Module=project_manager
+Name=Project Manager
+Description=A directory browser to act as project manager based adapted from eddt gedit plugin
+Authors=Alexandre da Silva <lexrupy at gmail dot com>
+Website=http://blog.siverti.com.br/gmate
+

@@ -1,0 +1,7 @@
+[GMate Plugin]
+Module=draw_whitespaces
+Name=Draw Whitespaces
+Description=Draw Whitespaces on Editor Window
+Authors=Alexandre da Silva <lexrupy at gmail.com>
+Website=http://blog.siverti.com.br/gmate
+

@@ -1,0 +1,7 @@
+[GMate Plugin]
+Module=gotofile
+Name=Go to file
+Description=Open File by regex
+Authors=Alexandre da Silva <lexrupy at gmail.com>, adapted from gedit snap open plugin
+Website=http://blog.siverti.com.br/gmate
+

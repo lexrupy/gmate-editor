@@ -1,0 +1,7 @@
+[GMate Plugin]
+Module=pairs
+Name=Complete Pairs
+Description=Complete pair characters
+Authors=Alexandre da Silva <lexrupy at gmail.com>, adapted from gedit gemini plugin
+Website=http://blog.siverti.com.br/gmate
+
