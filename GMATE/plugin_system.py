@@ -13,6 +13,9 @@ from GMATE.gmate_plugin import GMatePlugin
 
 
 class PluginInfo:
+    """
+        Describes the plugin information
+    """
     module = None
     name = None
     description = None
@@ -39,6 +42,9 @@ def trigger_method(method_name, *args):
 
 
 def list_plugins(plugin_list):
+    """
+        Return a list of loadable plugins given the list of .gmplugin files
+    """
     result = []
     for plugin in plugin_list:
         p = PluginInfo()
@@ -59,6 +65,9 @@ def list_plugins(plugin_list):
 
 
 def load_plugins():
+    """
+        Look up at plugin folders and try to load the found plugins
+    """
     plugin_list = map(lambda f: os.path.join(GMATE_PLUGIN_CORE_FOLDER, f),
         filter(lambda f: f.endswith('.gmplugin'), os.listdir(GMATE_PLUGIN_CORE_FOLDER))
     ) + map(lambda f: os.path.join(GMATE_PLUGIN_HOME_FOLDER, f),
@@ -76,12 +85,18 @@ def load_plugins():
 
 
 def init_plugin_system():
+    """
+        Initialize the plugin system.
+    """
     if not GMATE_PLUGIN_CORE_FOLDER in sys.path:
         sys.path.insert(0, GMATE_PLUGIN_CORE_FOLDER)
     load_plugins()
 
 
 def initialize_plugins(window, uimanager):
+    """
+        Look up at all Plugins found and setup them, by calling *setup* method./
+    """
     for plugin in GMatePlugin.__subclasses__():
         # Store only classname to prevent double instanciating
         classname = plugin.__name__

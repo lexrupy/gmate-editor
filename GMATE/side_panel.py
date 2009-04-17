@@ -18,6 +18,7 @@ class SidePanel(gtk.Notebook):
         self.set_scrollable(True)
         self.set_show_tabs(True)
 
+
     def add_tab(self, widget, name, icon=None):
         title = gtk.HBox()
         title.set_border_width(5)

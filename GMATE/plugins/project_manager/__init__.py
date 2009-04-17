@@ -34,6 +34,7 @@ from i18n import msg0005
 from treecellmenu import TreeCellMenu
 
 from GMATE.gmate_plugin import GMatePlugin
+from GMATE.utils import not_implemented
 
 class ProjectManager(GMatePlugin):
 
@@ -42,9 +43,11 @@ class ProjectManager(GMatePlugin):
         self.__create_ui()
         self.window.set_data(self.DATA_KEY, self.__project_explorer)
 
+
     def teardown(self):
         self.__destroy_ui()
         self.window.set_data(self.DATA_KEY, None)
+
 
     def __create_ui(self):
         """Creates all UI elements needed by ProjectExplorer."""
@@ -112,19 +115,23 @@ class ProjectManager(GMatePlugin):
         self.__view_port.destroy()
         self.__view_port = None
 
+
     def __on_refresh_clicked(self, widget):
         self.__project_explorer.refresh()
+
 
     def __on_back_clicked(self, widget):
         self.__project_explorer.navigate_to_parent()
 
-    def __on_new_file_clicked_cb(self, widget):
-        # TODO: implement
-        print self.__project_explorer.get_repository()
 
+    @not_implemented
+    def __on_new_file_clicked_cb(self, widget):
+        pass
+
+
+    @not_implemented
     def __on_new_dir_clicked_cb(self, widget):
-        # TODO: implement
-        print self.__project_explorer.get_repository()
+        pass
 
 
     def __on_treeview_button_press_event(self, widget, event):
@@ -147,6 +154,7 @@ class ProjectManager(GMatePlugin):
                 # Display the menu based on the PathDescriptor
                 menu = TreeCellMenu(self.__project_explorer)
                 menu.display(desc, event)
+
 
     def get_project_root(self):
         """
