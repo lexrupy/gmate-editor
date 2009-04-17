@@ -190,6 +190,8 @@ class GmateEditor(gtk.Window):
             Open the File URI in editor
         """
         doc = self.DocumentManager.load_document(file_uri, encoding)
+        self.set_active_document(doc)
+        return doc
 
 
     def new_document(self, widget=None):
@@ -198,6 +200,7 @@ class GmateEditor(gtk.Window):
         """
         new_doc = self.DocumentManager.new_document('python')
         self.set_active_document(new_doc)
+        return new_doc
 
 
     def open_document(self, widget=None):

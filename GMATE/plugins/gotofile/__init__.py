@@ -164,8 +164,9 @@ class GoToFile(GMatePlugin):
 
     def _open_file(self, filename):
         uri = self._rootdir + "/" + filename
-        dm = self.window.DocumentManager
-        dm.load_document(uri, self._encoding)
+        self.window.open_uri(uri, self._encoding)
+        #dm = self.window.DocumentManager
+        #dm.load_document(uri, self._encoding)
 
 
     def get_root_path(self):

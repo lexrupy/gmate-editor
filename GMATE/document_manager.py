@@ -67,7 +67,7 @@ class TabTitle(gtk.HBox):
 
     def __close(self, widget):
         # TODO: when close the last document, create a new empty document
-        # And if the current document is a new not modified document, just ignore
+        # And if the current document is a new umodified document, just ignore
         #self.statusbar.disconnect_all()
         if self.__doc:
             self.__doc.close()
@@ -105,7 +105,7 @@ class DocumentManager(object):
 
     def get_document_by_uri(self, uri):
         for doc in self.documents:
-            if doc.get_filename() == uri:
+            if doc.get_uri() == uri:
                 return doc
         return None
 
